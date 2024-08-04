@@ -26,6 +26,8 @@ private:
   BLECharacteristic *lyricCharacteristic;
   BLECharacteristic *authorCharacteristic;
   BLECharacteristic *titleCharacteristic;
+  BLECharacteristic *stateCharacteristic;
+  BLECharacteristic *durationCharacteristic;
 
   void createCharacteristic(BLEService *pService, BLECharacteristic **characteristic, const char *uuid, BLECharacteristicCallbacks *callbacks);
 };

@@ -17,5 +17,13 @@ class TitleCallbacks : public BLECharacteristicCallbacks
 {
   void onWrite(BLECharacteristic *pCharacteristic);
 };
+class StateCallbacks : public BLECharacteristicCallbacks
+{
+  void onWrite(BLECharacteristic *pCharacteristic);
+};
+class DurationCallbacks : public BLECharacteristicCallbacks
+{
+  void onWrite(BLECharacteristic *pCharacteristic);
+};
 
 #endif // BLE_CHARACTERISTIC_CALLBACKS_H

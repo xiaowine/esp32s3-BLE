@@ -16,7 +16,7 @@ void BLETool::createCharacteristic(BLEService *pService, BLECharacteristic **cha
           BLECharacteristic::PROPERTY_WRITE);
 
   // 设置特征的初始值
-  (*characteristic)->setValue("Hello World!");
+  (*characteristic)->setValue("");
 
   // 设置特征回调
   (*characteristic)->setCallbacks(callbacks);
@@ -41,6 +41,8 @@ void BLETool::initBLE()
   createCharacteristic(pService, &lyricCharacteristic, LYRIC_CHARACTERISTIC_UUID, new LyricCallbacks());
   createCharacteristic(pService, &authorCharacteristic, AUTHOR_CHARACTERISTIC_UUID, new AuthorCallbacks());
   createCharacteristic(pService, &titleCharacteristic, TITLE_CHARACTERISTIC_UUID, new TitleCallbacks());
+  createCharacteristic(pService, &stateCharacteristic, TITLE_CHARACTERISTIC_UUID, new StateCallbacks());
+  createCharacteristic(pService, &durationCharacteristic, TITLE_CHARACTERISTIC_UUID, new DurationCallbacks());
 
   // 启动服务
   pService->start();

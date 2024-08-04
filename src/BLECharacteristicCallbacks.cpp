@@ -21,3 +21,16 @@ void TitleCallbacks::onWrite(BLECharacteristic *pCharacteristic)
   Serial.print("Title Characteristic value written: ");
   Serial.println(value.c_str());
 }
+
+void StateCallbacks::onWrite(BLECharacteristic *pCharacteristic)
+{
+  std::string value = pCharacteristic->getValue();
+  Serial.print("State Characteristic value written: ");
+  Serial.println(value.c_str());
+}
+void DurationCallbacks::onWrite(BLECharacteristic *pCharacteristic)
+{
+  std::string value = pCharacteristic->getValue();
+  Serial.print("State Characteristic value written: ");
+  Serial.println(value.c_str());
+}
